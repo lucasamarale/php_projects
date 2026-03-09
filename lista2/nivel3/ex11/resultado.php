@@ -1,11 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
-    exit;
-}
-
 $base  = '../../';
-$nivel = 'Nível 3 – Estrutura de Repetição for';
+include $base . 'includes/post_guard.php';
+
+$nivel  = 'Nível 3 – Estrutura de Repetição for';
 $titulo = 'Exercício 11 – Tabuada';
 include $base . 'includes/header.php';
 

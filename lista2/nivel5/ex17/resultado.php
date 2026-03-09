@@ -1,11 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
-    exit;
-}
-
 $base  = '../../';
-$nivel = 'Nível 5 – Estrutura do...while';
+include $base . 'includes/post_guard.php';
+
+$nivel  = 'Nível 5 – Estrutura do...while';
 $titulo = 'Exercício 17 – Menu Simples';
 include $base . 'includes/header.php';
 

@@ -1,11 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
-    exit;
-}
-
 $base  = '../../';
-$nivel = 'Nível 2 – Estruturas Condicionais';
+include $base . 'includes/post_guard.php';
+
+$nivel  = 'Nível 2 – Estruturas Condicionais';
 $titulo = 'Exercício 08 – Calculadora Simples';
 include $base . 'includes/header.php';
 

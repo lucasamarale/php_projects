@@ -1,11 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
-    exit;
-}
-
 $base  = '../../';
-$nivel = 'Nível 4 – Estrutura while';
+include $base . 'includes/post_guard.php';
+
+$nivel  = 'Nível 4 – Estrutura while';
 $titulo = 'Exercício 15 – Validação de Senha';
 include $base . 'includes/header.php';
 

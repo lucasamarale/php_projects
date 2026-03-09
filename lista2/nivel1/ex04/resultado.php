@@ -1,11 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
-    exit;
-}
-
 $base  = '../../';
-$nivel = 'Nível 1 – Variáveis e Operações Básicas';
+include $base . 'includes/post_guard.php';
+
+$nivel  = 'Nível 1 – Variáveis e Operações Básicas';
 $titulo = 'Exercício 04 – Concatenação de Strings';
 include $base . 'includes/header.php';
 

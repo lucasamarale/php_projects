@@ -1,11 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
-    exit;
-}
-
 $base  = '../../';
-$nivel = 'Desafios Extras – Misturando Estruturas';
+include $base . 'includes/post_guard.php';
+
+$nivel  = 'Desafios Extras – Misturando Estruturas';
 $titulo = 'Exercício 25 – Caixa Eletrônico';
 include $base . 'includes/header.php';
 
