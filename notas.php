@@ -1,9 +1,9 @@
 <?php
-$alunos = [];
+$nome = $nota1 = $nota2 = $nota3 = $media = $situacao = "";
 $erro = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST["nome"];
+    $nome  = $_POST["nome"];
     $nota1 = $_POST["nota1"];
     $nota2 = $_POST["nota2"];
     $nota3 = $_POST["nota3"];
@@ -20,15 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $situacao = "Reprovado";
         }
-
-        $alunos[] = [
-            "nome" => $nome,
-            "nota1" => $nota1,
-            "nota2" => $nota2,
-            "nota3" => $nota3,
-            "media" => number_format($media, 2),
-            "situacao" => $situacao
-        ];
     }
 }
 ?>
@@ -54,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p style="color: red;"><?= $erro ?></p>
     <?php endif; ?>
 
-    <?php if (!empty($alunos)): ?>
+    <?php if ($situacao): ?>
         <h2>Resultado</h2>
         <table border="1" cellpadding="8">
             <tr>
@@ -65,16 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <th>Média</th>
                 <th>Situação</th>
             </tr>
-            <?php foreach ($alunos as $aluno): ?>
             <tr>
-                <td><?= $aluno["nome"] ?></td>
-                <td><?= $aluno["nota1"] ?></td>
-                <td><?= $aluno["nota2"] ?></td>
-                <td><?= $aluno["nota3"] ?></td>
-                <td><?= $aluno["media"] ?></td>
-                <td><?= $aluno["situacao"] ?></td>
+                <td><?= $nome ?></td>
+                <td><?= $nota1 ?></td>
+                <td><?= $nota2 ?></td>
+                <td><?= $nota3 ?></td>
+                <td><?= number_format($media, 2) ?></td>
+                <td><?= $situacao ?></td>
             </tr>
-            <?php endforeach; ?>
         </table>
     <?php endif; ?>
 </body>
